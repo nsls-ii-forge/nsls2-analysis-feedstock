@@ -1,7 +1,7 @@
 About nsls2-analysis
 ====================
 
-Home: https://github.com/NSLS-II-
+Home: https://github.com/NSLS-II
 
 Package license: BSD 3-Clause
 
