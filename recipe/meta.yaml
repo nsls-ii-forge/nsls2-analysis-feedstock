@@ -9,7 +9,7 @@ package:
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: true  # [py<37 or not linux]
 
 requirements:
   host:
