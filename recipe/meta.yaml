@@ -27,6 +27,53 @@ requirements:
     - sixtools
     # - xpdan
 
+test:
+  requires:
+    - nsls2forge-utils
+  imports:
+    - bluesky
+    - dask
+    - databroker
+    - event_model
+    - lmfit
+    - matplotlib
+    - numpy
+    - ophyd
+    - oscars
+    - peakutils
+    - pymongo
+    - skbeam
+    - suitcase.csv
+    - suitcase.json_metadata
+    - suitcase.jsonl
+    - suitcase.mongo_embedded
+    - suitcase.mongo_normalized
+    - suitcase.msgpack
+    - suitcase.specfile
+    - suitcase.tiff_series
+    - suitcase.tiff_stack
+    - suitcase.utils
+    - xray_vision
+    - chxtools
+    - csxtools
+    - edrixs
+    - eiger_io
+    - hxntools
+    - isstools
+    - py4xs
+    - sixtools
+  commands:
+    # Fail if the "conda-forge" channel is in the list of channels.
+    - check-results -t channels -f conda-forge
+    # Fail if versions of the packages are not as expected minimum ones.
+    - check-results -t version -p bluesky     -e 1.6
+    - check-results -t version -p event-model -e 1.15
+    - check-results -t version -p ophyd       -e 1.4
+    - check-results -t version -p databroker  -e 1.0
+    - python -V
+    - ipython -V
+    - nexpy --help
+
 about:
   home: https://github.com/NSLS-II
   license: BSD 3-Clause
