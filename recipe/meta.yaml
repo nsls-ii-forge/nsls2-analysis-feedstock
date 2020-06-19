@@ -19,13 +19,13 @@ requirements:
     - analysis ==2020C2.0
     - chxtools
     - csxtools
-    # - edrixs
+    - edrixs
     - eiger-io
     - hxntools
     - isstools
     - py4xs
     - sixtools
-    - xpdan
+    # - xpdan
 
 about:
   home: https://github.com/NSLS-II
