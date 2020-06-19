@@ -9,115 +9,81 @@ package:
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: true  # [py<37 or not linux]
 
 requirements:
   host:
     - python
   run:
     - python
-    # SIX
-    - edrixs
-    - pycentroids
-    - scikit-learn
-    - sixtools >=0.0.2
-    # ISR
-    - eiger-io
-    # SRX
-    - hxntools
-    - pyxrf >=0.0.9
-    # ISS
-    - isstools
-    - mendeleev
-    - netcdf4
-    - numexpr
-    - periodictable
-    - pyzbar
-    - xraylarch >=0.9.45
-    # CHX
-    - boto3
+    - analysis ==2020C2.0
     - chxtools
-    - graphviz
-    - line_profiler
-    - memory_profiler
-    - modestimage
-    - papermill
-    # SMI
-    - pyfai
-    - sasview
-    # LIX
-    - fabio
-    - py4xs
-    - lmfit >=0.9.9
-    # FXI
-    - pypdf2
-    - pystackreg
-    - reportlab
-    - scikit-learn
-    - tomopy
-    # CSX1
-    - csxtools >=0.1.14
-    # CSX2
     - csxtools
-    - amostra
-    # PDF
-    - xpdan
-    # XPD
-    #- xpdan
+    - edrixs
+    - eiger-io
+    - hxntools
+    - isstools
+    - py4xs
+    - sixtools
+    # - xpdan
 
 test:
+  requires:
+    - nsls2forge-utils
   imports:
-    # SIX
-    - edrixs
-    - pycentroids
-    - scikit-learn
-    - sixtools >=0.0.2
-    # ISR
-    - eiger-io
-    # SRX
-    - hxntools
-    - pyxrf >=0.0.9
-    # ISS
-    - isstools
-    - mendeleev
-    - netcdf4
-    - numexpr
-    - periodictable
-    - pyzbar
-    - xraylarch >=0.9.45
-    # CHX
-    - boto3
+    - bluesky
+    - dask
+    - databroker
+    - event_model
+    - lmfit
+    - matplotlib
+    - numpy
+    - ophyd
+    - oscars
+    - peakutils
+    - pymongo
+    - skbeam
+    - suitcase.csv
+    - suitcase.json_metadata
+    - suitcase.jsonl
+    - suitcase.mongo_embedded
+    - suitcase.mongo_normalized
+    - suitcase.msgpack
+    - suitcase.specfile
+    - suitcase.tiff_series
+    - suitcase.tiff_stack
+    - suitcase.utils
+    - xray_vision
     - chxtools
-    - graphviz
-    - line_profiler
-    - memory_profiler
-    - modestimage
-    - papermill
-    # SMI
-    - pyfai
-    - sasview
-    # LIX
-    - fabio
-    - py4xs
-    - lmfit >=0.9.9
-    # FXI
-    - pypdf2
-    - pystackreg
-    - reportlab
-    - scikit-learn
-    - tomopy
-    # CSX1
-    - csxtools >=0.1.14
-    # CSX2
     - csxtools
-    - amostra
-    # PDF
-    - xpdan
-    # XPD
-    #- xpdan
+    - edrixs
+    - eiger_io
+    - hxntools
+    - isstools
+    - py4xs
+    - sixtools
+  commands:
+    # Fail if the "conda-forge" channel is in the list of channels.
+    
+    # The conda-forge channel does not appear when building locally using a
+    # different Docker image.
+    # (host) $ docker run -it --rm -v $PWD:/build nsls2/debian-with-miniconda:v0.1.2 bash
+    # $ conda create -n test -c nsls2forge -c defaults --override-channels analysis=2020C2.0 chxtools csxtools edrixs eiger-io hxntools isstools py4xs sixtools
+    
+    # TODO: make it working again in the cloud.
+    # - check-results -t channels -f conda-forge
+
+    # Fail if versions of the packages are not as expected minimum ones.
+    - check-results -t version -p bluesky     -e 1.6
+    - check-results -t version -p event_model -e 1.15
+    - check-results -t version -p ophyd       -e 1.4
+    - check-results -t version -p databroker  -e 1.0
+    - python -V
+    - ipython -V
+    - nexpy --help
 
 about:
-  home: https://github.com/NSLS-II-
+  home: https://github.com/NSLS-II
   license: BSD 3-Clause
   license_file: LICENSE
   summary: Bluesky analysis metapackage for NSLS-II beamlines
