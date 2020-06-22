@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0
+    - analysis ==2020C2.0=*_3
     - chxtools
     - csxtools
     - edrixs
@@ -31,6 +31,7 @@ test:
   requires:
     - nsls2forge-utils
   imports:
+    - area_detector_handlers
     - bluesky
     - dask
     - databroker
@@ -42,6 +43,7 @@ test:
     - oscars
     - peakutils
     - pymongo
+    - pyxrf
     - skbeam
     - suitcase.csv
     - suitcase.json_metadata
@@ -54,6 +56,7 @@ test:
     - suitcase.tiff_stack
     - suitcase.utils
     - xray_vision
+    # Beamline-specific packages
     - chxtools
     - csxtools
     - edrixs
@@ -75,9 +78,9 @@ test:
 
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
+    - check-results -t version -p databroker  -e 1.0
     - check-results -t version -p event_model -e 1.15
     - check-results -t version -p ophyd       -e 1.4
-    - check-results -t version -p databroker  -e 1.0
     - python -V
     - ipython -V
     - nexpy --help
