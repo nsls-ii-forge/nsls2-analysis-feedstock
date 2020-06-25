@@ -22,7 +22,9 @@ requirements:
     - edrixs
     - eiger-io
     - hxntools
+    - ispyb
     - isstools
+    - nslsii
     - py4xs
     - sixtools
     # - xpdan
