@@ -77,7 +77,6 @@ test:
     - ipython -V
     - nexpy --help
     - conda-pack --help
-    - conda-unpack --help
 
 about:
   home: https://github.com/NSLS-II
