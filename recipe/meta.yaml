@@ -67,14 +67,7 @@ test:
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    
-    # The conda-forge channel does not appear when building locally using a
-    # different Docker image.
-    # (host) $ docker run -it --rm -v $PWD:/build nsls2/debian-with-miniconda:v0.1.2 bash
-    # $ conda create -n test -c nsls2forge -c defaults --override-channels analysis=2020C2.0 chxtools csxtools edrixs eiger-io hxntools isstools py4xs sixtools
-    
-    # TODO: make it working again in the cloud.
-    # - check-results -t channels -f conda-forge
+    - check-results -t channels -f conda-forge
 
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
