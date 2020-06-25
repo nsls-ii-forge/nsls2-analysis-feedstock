@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -38,6 +38,7 @@ test:
     - event_model
     - lmfit
     - matplotlib
+    - nslsii
     - numpy
     - ophyd
     - oscars
