@@ -40,7 +40,6 @@ test:
     - event_model
     - lmfit
     - matplotlib
-    - nslsii
     - numpy
     - ophyd
     - oscars
@@ -65,7 +64,9 @@ test:
     - edrixs
     - eiger_io
     - hxntools
+    - ispyb
     - isstools
+    - nslsii  # needed for transforms at CSX
     - py4xs
     - sixtools
   commands:
