@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,13 +16,15 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0=*_4
+    - analysis ==2020C2.0=*_5
     - chxtools
     - csxtools
     - edrixs
     - eiger-io
     - hxntools
+    - ispyb
     - isstools
+    - nslsii  # needed for transforms at CSX
     - py4xs
     - sixtools
     # - xpdan
@@ -62,7 +64,9 @@ test:
     - edrixs
     - eiger_io
     - hxntools
+    - ispyb
     - isstools
+    - nslsii
     - py4xs
     - sixtools
   commands:
