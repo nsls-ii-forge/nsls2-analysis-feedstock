@@ -5,7 +5,7 @@ Home: https://github.com/NSLS-II
 
 Package license: BSD 3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Bluesky analysis metapackage for NSLS-II beamlines
 
