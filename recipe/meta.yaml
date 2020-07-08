@@ -84,6 +84,6 @@ test:
 
 about:
   home: https://github.com/NSLS-II
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
   summary: Bluesky analysis metapackage for NSLS-II beamlines
