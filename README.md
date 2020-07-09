@@ -3,7 +3,7 @@ About nsls2-analysis
 
 Home: https://github.com/NSLS-II
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD-3-Clause
 
