@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 5
+  number: 6
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0=*_7
+    - analysis ==2020C2.0=*_8
     - chxtools
     - csxtools
     - edrixs
@@ -40,6 +40,7 @@ test:
     - event_model
     - lmfit
     - matplotlib
+    - napari
     - numpy
     - ophyd
     - oscars
@@ -79,8 +80,10 @@ test:
     - check-results -t version -p ophyd       -e 1.4
     - python -V
     - ipython -V
-    - nexpy --help
     - conda-pack --help
+    - nexpy --help
+    - napari --help
+    - napari --version
 
 about:
   home: https://github.com/NSLS-II
