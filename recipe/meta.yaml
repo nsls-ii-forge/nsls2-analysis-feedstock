@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 6
+  number: 7
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0=*_8
+    - analysis ==2020C2.0=*_9
     - chxtools
     - csxtools
     - edrixs
@@ -24,7 +24,8 @@ requirements:
     - hxntools >=0.4.3
     - ispyb
     - isstools
-    - nslsii  # needed for transforms at CSX
+    - nsls2-detector-handlers >=0.0.2
+    - nslsii >=0.0.17  # needed for transforms at csx
     - py4xs
     - sixtools
     # - xpdan
@@ -77,7 +78,8 @@ test:
     - check-results -t version -p bluesky     -e 1.6
     - check-results -t version -p databroker  -e 1.0
     - check-results -t version -p event_model -e 1.15
-    - check-results -t version -p ophyd       -e 1.4
+    - check-results -t version -p nslsii      -e 0.0.17
+    - check-results -t version -p ophyd       -e 1.5
     - python -V
     - ipython -V
     - conda-pack --help
