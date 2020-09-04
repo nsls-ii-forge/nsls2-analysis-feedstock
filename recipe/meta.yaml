@@ -19,6 +19,8 @@ requirements:
     - analysis ==2020C2.0=*_10
     - chxtools
     - csxtools
+    # TODO: move it to the analysis metapackage
+    - doi2bib
     - edrixs
     - eiger-io
     - hxntools >=0.5
