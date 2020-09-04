@@ -21,13 +21,13 @@ requirements:
     - csxtools
     - edrixs
     - eiger-io
-    - hxntools >=0.4.3
+    - hxntools >=0.5
     - igor
     - ispyb
     - isstools
     - legacy-suitcase
-    - nsls2-detector-handlers >=0.0.7
-    - nslsii >=0.0.17  # needed for transforms at csx
+    - nsls2-detector-handlers >=0.0.2
+    - nslsii >=0.1.0  # needed for transforms at csx
     - py4xs
     - pyqtgraph
     - sixtools
@@ -76,19 +76,19 @@ test:
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    - check-results -t channels -f conda-forge
+    - check-results -t channels -f conda-forge  # [not osx]
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
-    - check-results -t version -p databroker  -e 1.0
-    - check-results -t version -p event_model -e 1.15
-    - check-results -t version -p nslsii      -e 0.0.17
+    - check-results -t version -p databroker  -e 1.1
+    - check-results -t version -p event_model -e 1.16
+    - check-results -t version -p nslsii      -e 0.1
     - check-results -t version -p ophyd       -e 1.5
     - python -V
     - ipython -V
     - conda-pack --help
-    - nexpy --help
     - napari --help
     - napari --version
+    - nexpy --help
 
 about:
   home: https://github.com/NSLS-II
