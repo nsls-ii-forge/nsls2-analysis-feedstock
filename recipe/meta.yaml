@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 8
+  number: 9
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,11 +16,9 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0=*_10
+    - analysis ==2020C2.0=*_12
     - chxtools
     - csxtools
-    # TODO: move it to the analysis metapackage
-    - doi2bib
     - edrixs
     - eiger-io
     - hxntools >=0.5
