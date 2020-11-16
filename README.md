@@ -5,11 +5,9 @@ Home: https://github.com/NSLS-II
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/nsls2-analysis-feedstock/blob/master/LICENSE.txt)
 
 Summary: Bluesky analysis metapackage for NSLS-II beamlines
-
-
 
 Current build status
 ====================
@@ -29,10 +27,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.7</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=170&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/nsls2-analysis-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7" alt="variant">
+                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/nsls2-analysis-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr>
