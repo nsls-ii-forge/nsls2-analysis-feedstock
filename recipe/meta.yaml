@@ -1,6 +1,6 @@
 {% set name = "nsls2-analysis" %}
-{% set year = "2020" %}
-{% set cycle = "2" %}
+{% set year = "2021" %}
+{% set cycle = "1" %}
 {% set version = "0" %}
 
 package:
@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 9
+  number: 0
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2020C2.0=*_12
+    - analysis ==2021C1.0=*_0
     - chxtools
     - csxtools
     - edrixs
@@ -26,8 +26,8 @@ requirements:
     - ispyb
     - isstools
     - legacy-suitcase
-    - nsls2-detector-handlers >=0.0.2
-    - nslsii >=0.1.0  # needed for transforms at csx
+    - nsls2-detector-handlers >=0.0.8
+    - nslsii >=0.1.1  # needed for transforms at csx
     - py4xs
     - pyqtgraph
     - sixtools
@@ -76,13 +76,13 @@ test:
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    - check-results -t channels -f conda-forge  # [not osx]
+    - check-results -t channels -f conda-forge
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
-    - check-results -t version -p databroker  -e 1.1
-    - check-results -t version -p event_model -e 1.16
-    - check-results -t version -p nslsii      -e 0.1
-    - check-results -t version -p ophyd       -e 1.5
+    - check-results -t version -p databroker  -e 1.2
+    - check-results -t version -p event_model -e 1.17
+    - check-results -t version -p nslsii      -e 0.1.1
+    - check-results -t version -p ophyd       -e 1.6
     - python -V
     - ipython -V
     - conda-pack --help
