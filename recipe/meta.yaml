@@ -26,7 +26,7 @@ requirements:
     - ispyb
     - isstools
     - legacy-suitcase
-    - nsls2-detector-handlers >=0.0.8
+    - nsls2-detector-handlers >=0.0.2
     - nslsii >=0.1.1  # needed for transforms at csx
     - py4xs
     - pyqtgraph
