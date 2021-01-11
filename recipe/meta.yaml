@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2021C1.0=*_0
+    - analysis ==2021C1.1
     - chxtools
     - csxtools
     - edrixs
