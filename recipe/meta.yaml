@@ -1,7 +1,7 @@
 {% set name = "nsls2-analysis" %}
 {% set year = "2021" %}
 {% set cycle = "1" %}
-{% set version = "0" %}
+{% set version = "1" %}
 
 package:
   name: {{ name|lower }}
