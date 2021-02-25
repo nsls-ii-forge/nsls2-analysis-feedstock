@@ -29,10 +29,11 @@ requirements:
     - lixtools
     - nsls2-detector-handlers >=0.0.2
     - nslsii >=0.1.1  # needed for transforms at csx
+    - pdfstream
     - py4xs
     - pyqtgraph
     - sixtools
-    # - xpdan
+    - xpdan
 
 test:
   requires:
