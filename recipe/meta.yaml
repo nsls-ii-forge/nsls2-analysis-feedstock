@@ -1,7 +1,7 @@
 {% set name = "nsls2-analysis" %}
 {% set year = "2021" %}
 {% set cycle = "1" %}
-{% set version = "1" %}
+{% set version = "2" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2021C1.1
+    - analysis ==2021C1.2
     - chxtools
     - csxtools
     - edrixs
@@ -26,6 +26,7 @@ requirements:
     - ispyb
     - isstools
     - legacy-suitcase
+    - lixtools
     - nsls2-detector-handlers >=0.0.2
     - nslsii >=0.1.1  # needed for transforms at csx
     - py4xs
@@ -71,6 +72,7 @@ test:
     - hxntools
     - ispyb
     - isstools
+    - lixtools
     - nslsii
     - py4xs
     - sixtools
