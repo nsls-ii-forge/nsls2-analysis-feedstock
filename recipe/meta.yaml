@@ -1,14 +1,14 @@
 {% set name = "nsls2-analysis" %}
 {% set year = "2021" %}
-{% set cycle = "1" %}
-{% set version = "2" %}
+{% set cycle = "2" %}
+{% set version = "0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2021C1.2=*_2
+    - analysis ==2021C1.2=*_3
     - chxtools
     - csxtools
     - edrixs
@@ -29,6 +29,7 @@ requirements:
     - lixtools
     - nsls2-detector-handlers >=0.0.2
     - nslsii >=0.1.1  # needed for transforms at csx
+    - oct2py
     - pdfstream
     - py4xs
     - pyqtgraph
@@ -79,6 +80,7 @@ test:
     - sixtools
   files:
     - test.xlsx
+    - test.xls
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
     - check-results -t channels -f conda-forge
@@ -94,7 +96,10 @@ test:
     - napari --help
     - napari --version
     - nexpy --help
+    # Test reading the newer format .xlsx with pandas/openpyxl:
     - python -c "import pandas; print(pandas.read_excel('test.xlsx'))"
+    # Test reading the old format .xls with pandas/xlrd:
+    - python -c "import pandas; print(pandas.read_excel('test.xls'))"
 
 about:
   home: https://github.com/NSLS-II
