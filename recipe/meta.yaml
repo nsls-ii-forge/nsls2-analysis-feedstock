@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37 or not linux]
 
 requirements:
@@ -16,7 +16,7 @@ requirements:
     - python
   run:
     - python
-    - analysis ==2021C1.2=*_3
+    - analysis ==2021C2.0=*_0
     - chxtools
     - csxtools
     - edrixs
